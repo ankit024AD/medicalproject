@@ -1,0 +1,18 @@
+
+<input type="text" id="filter-text-box" placeholder="Filter..."[(ngModel)]= "searchvalue" (keyup)="filteruser()">
+<ag-grid-angular
+    style="width: 100%; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="patientslist"
+    (gridReady)="onGridReady($event)"
+    [columnDefs]="columnDefs"
+    [frameworkComponents]="frameworkComponents" >
+    
+</ag-grid-angular>
+
+<h3>Details</h3>
+<p>Id-:{{patientslist.patientId}}</p>
+<p>Name-:{{patientslist.firstName + " " + patientslist.lastName}}</p>
+<p>Date of Birth-:{{patientslist.dateOfBirth}}</p>
+<p>Is Active-:{{patientslist.isActive}}</p>
+<p>Status-:{{patientslist.status}}</p>
